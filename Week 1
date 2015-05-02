@@ -94,3 +94,137 @@ multimedia, networks, and mixture of multiple types
 
 1.4 A Multi-Dimensional Categorization (02:19)
 
+-Technique-Centered
+.Distance-based methods
+.Density-based and grid-based methods
+.Probabilistic and generative models
+.Leveraging dimensionality reduction methods
+.High-dimensional clustering
+.Scalable techniques for cluster analysis
+
+-Data Type-Centered
+.Clustering numerical data, categorical data, text data, multimedia data, time-series
+data, sequences, stream data, networked data, uncertain data
+
+-Additional Insight-Centered
+.Visual insights, semi-supervised, ensemble-based, validation-based
+
+--__--__--
+
+1.5 An Overview of Typical Clustering Methodologies (06:56)
+
+-Distance-based methods
+.Paritioning algorithms: K-Means, K-Medians, k-Medoids
+.Hierarchical algorithms: Agglomerative vs divise methods
+
+-Density-based and grid-based methods
+.Density-based: Data space is explored at a high-level of granularity and then post-processing
+to put together dense regions into an arbitrary shape
+.Grid-based: Individual regions of the data space are formed into a grid-like structure
+
+-Probabilistic and generative models: Modeling data from a generative process
+.Assume a specific form of the generative model (e.g., mixture of Gaussians)
+.Model parameters are estimated with the Expectation-Maximization (EM) algorithm (using
+the available dataset, for a maximum likelihood fit)
+.Then estimate the generative probability of the underlying data points
+
+Typical Clustering Methodologies (II)
+-High-dimensional clustering
+.Subspace clustering: Find cluster on various subspaces
+..Bottom-up, top-down, correlation-based methods vs (Sigma)-cluster methods
+.Dimensionality reduction: A vertical form (i.e, columns) of clustering
+.Columns are clustered; may cluster rows and columns together(co-clustering)
+.Probabilistic latent semantic indexing (PLSI) then LDA: Topic modeling of text data
+.A cluster (i.e., topic) is associated with a set of words (i.e., dimensions) and a 
+set of documents (i.e., rows) simultaneously
+.Nonnegative matrix factorization (NMF) (as one kind of co-clustering)
+.A noonegative matrix A (e.g., world frequencies in documents) can be approximately
+factorized two non-negative low rank matrices U and V
+.Spectral clustering: Use the spectrum of the similarity matrix of the data to perform
+dimensionality reduction for clustering in fewer dimensions
+
+--__--__--
+
+1.6 An Overview of Clustering Different Types of Data (06:56)
+
+-Mumerical data
+.Most earliest clustering algorithms were designed for numerical data
+
+-Categorical data(including binary data)
+.Discrete data, no natural order (e.g., sex, race, zip-code, and market-basket)
+
+-Text data: Popoular in social media, Web, and social networks
+.Features: High-dimensional, sparse, value corresponding to word frequencies
+.Methods: Combination of k-means and agglomerative; topic modeling; co-clustering
+
+-Multimedia data: Image, audio , video (e.g., on Flickr, Youtube)
+.Multi-modal (often combined with text data)
+.Contextual: Containing both behavioral and contextual attributes
+..Images: Position of a pixel represents its context, value represents its behavior
+..Video and music data: Temporal ordering of records represents its meaning
+
+-Time-series data: Sensor data, stock markets, temporal tracking, forecasting, etc.
+.Data are temporallu dependent
+.Time: Contextual attribute; data value: behavioral attribute
+.Correlation-based online analysis (e.g., online clustering of stock to find stock tickers)
+.Shape-based offline analysis (e.g., cluster ECG based on overall shapes)
+
+-Sequence data: Weblogs, biological sequences. system command sequences
+.Contextual attribute: Placement (rather than time)
+.Similarity functions: Hamming distance, edit distance, longest common subsequence
+.Sequence clustering: Suffix tree, generative model (e.g., Hidden Markov Model)
+
+-Stream data:
+.Real-time, evolution and concept drift, single pass algorithm
+.Create efficient intermediate representation, e.g., micro-clustering
+
+Clustering Different Types of Data (III)
+-Graphs and homogeneous networks
+.Every kind of data can be represented as a graph with similarity values as edges
+.Methods: Generative models; combinatotial algorithms (graph cuts); spectral methods;
+non-negative matrix factorization methods
+
+-Heterogeneous networks
+.A network consists of multiple typed nodes and edges (e.g., bibliographical data)
+.Clustering different typed nodes/links together (e.g., NetClus)
+
+-Uncertain data: Noise, approximate values, multiple possible values
+.Incorporation of probabilistic information will improve the quality of clustering
+
+-Big data: Model system may store and process very big data (e.g., weblogs)
+.Ex. Google's MapReduce framework
+..Use map function to distribute the computation across different machines
+..Use Reduce function to aggregate results obtained from the Map step
+
+Q: Consider a heterogeneous network of publications that cointains nodes of type author,
+paper, and venue, where papers connect to authors via the written-by relation, papers
+connect to venues via the published-in relation, and papers connect to each other via
+the cited-by relation. What are some feasible ways to transform this network into a 
+homogeneous network?
+(x)We can create a citation network by only keeping papers and the cited-by links
+(induced subgraph on nodes of the type paper)
+(x)We can create a co-authorship network by keeping authors and creating links between
+authors that are connected to the same paper
+
+--__--__--
+
+1.7 An Overview of User Insights and Clustering (03:56)
+
+User Insights and Interactions in Clustering
+
+-Visual insights: One picture is worth a thousand words
+.Human eyes: High-speed processor linking with a rich knowledge-base
+.A human can provide intituitive insights; HD-eye: visualizing HD clusters
+
+-Semi-supervised insights: Passing user's insights or intention to system
+.User-seeding: A user provides a number of labeled examples, approximately representing
+categories of interest
+
+-Multi-view and ensemble-based insights
+.Multi-view clustering: Multiple clustering represent different perspectives
+.Multiple clustering results can be ensembled to provide a more robust solution
+
+-Validation-based insights: Evaluation of the quality of clusters generated
+.May use cases studies, specific measures, or pre-existing labels
+
+--__--__--
