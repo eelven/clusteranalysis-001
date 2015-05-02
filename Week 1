@@ -1,0 +1,96 @@
+1.1 Cluster Analysis : An Introduction (03:09)
+
+Session 1 What is a cluster Analysis?
+What is a cluster?
+A cluster is a collection of data objects which are
+Similar (or related) to one another within the same group (i.e., cluster) 
+Dissimilar (or unrelated) to the objects in other groups (i.e., clusters)
+
+Cluster analysis (or clustering, data segmentation, ...)
+Given a set of data points, partition them into a set of groups (i.e, clusters)
+which are as similar as possible
+
+Cluster analysis is unsupervised learning (i.e, no predefined classes)
+This contrasts with classification (i.e, supervised learning)
+
+Typical ways to use/apply cluster analysis
+As a stand-alone tool to geet insight into data distribution, or
+As a preprocessing (or intermediate) step for other algorithms
+
+--__--__--
+
+1.2 Applications of Cluster Analysis (02:19)
+
+-A key intermediate step for other data mining tasks
+.Generating a compact summary of data for classification, pattern discovery,
+hypothesis generation and testing, etc.
+.Outlier detection: Outliers - those "far away"from any cluster
+-Data summarization, compression, and reduction
+.ex. Image processing: Vector quantization
+-Collaborative filtering, recommendation systems, or customer segmentation
+.Find like-minded users or similar products
+-Dynamic trend detection
+.Clustering stream data and detecting trends and patterns
+-Multimedia data analysis, biological data analysis and social network analysis
+.ex. Clustering images or video/audio clips, gene/protein sequences, etc.
+
+Can we use clustering to help classification tasks?
+Yes ! We can use clustering as a preprocessing step in classification tasks to help
+us deal with features sparsity issues as well as engineering complex features. For
+example, in a medical database, each patient may have a distinct real-valued measure
+for certain tests (e.g. glucose, cholesterol). Clustering patients first may help us
+understand how binning should be done on real-valued feature to reduce feature
+sparsity and improve accuracy on classification tasks such as survival prediction.
+
+--__--__--
+
+1.3 Requirements, and Challenges (5:12)
+
+Considerations for Cluster Analysis
+
+-Partitioning criteria
+.Single level vs hierarchical partitioning (often, multi-level hierarchical
+partitioning is desirable)
+
+-Separation of cluster
+.Exclusive (e.g, one of customer belongs to only one region) vs non-exclusive (e.g.,
+one document may belong to more than on class)
+
+-Similarity measure
+.Distance-based (e.g., Euclidean, road network, vector) vs. connectivity based (e.g., 
+density or contiguity)
+
+-Clustering space
+.Full space (often when low dimensional) vs. subspaces (often in high-dimensional
+clustering)
+
+In wich of the following scenarios is hierarchical partition likely to be desired
+over single level partitioning?
+(x) Clustering documents by topics, where there might be inherent hierarchy in the
+topics (e.g., Computer Science->Data Mining->Cluster Analysis)
+(x) Clustering organisms based on their characteristics (e.g. appearance, behaviors, 
+genetic makeup). (Hint: think about taxonomy in biology)
+(x) Clustering people by geolocation where we may wish to examine the population at
+different levels of resolution (e.g. Country->State->Municipality)
+
+Requirements and Challenges
+-Quality
+.Ability to deal with different types of attributes: Numerical, categorical, text,
+multimedia, networks, and mixture of multiple types
+.Discovery of clusters with arbitrary shape
+.Abililty to deal with noisy data
+
+-Scalability
+.Clustering all the data instead of only on samples
+.High dimensionality
+.Incremental or stream clustering and insensitivity to input order
+
+-Constraint-based clustering
+.User-given preferences or constraints; domain knowledge; user queries
+
+-Interpretability and usability
+
+--__--__--
+
+1.4 A Multi-Dimensional Categorization (02:19)
+
